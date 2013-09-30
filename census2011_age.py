@@ -52,7 +52,7 @@ dataColumns = [
 def createOutputFiles( stub ):
     openFiles = []
     for i in geoLevels:
-        newFile = i['code'] + '_' + stub + '.csv'
+        newFile = stub + '_' + i['code'] + '.csv'
         print ">>createOutputFiles - creating: " + newFile
         f = open( newFile, 'w' )
         openFiles.append( f )
