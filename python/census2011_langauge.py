@@ -20,33 +20,117 @@ geoLevels = [
         {'name':'Province', 'code':'PR', 'codeLength':2},
         {'name':'Census Division', 'code':'CD', 'codeLength':4},
         {'name':'Census Subdivision', 'code':'CSD', 'codeLength':7},
-        {'name':'Dissemination area', 'code':'DA', 'codeLength':8} ]
-columnHeaders= "UID,NAME,TOTALPOP,MTPOP,M0_4,M5_9,M10_14,M15_19,M20_24,M25_29,M30_34,M35_39,M40_44,M45_49,M50_54,M55_59,M60_64,M65_69,M70_74,M75_79,M80_84,M85_89,M90_94,M95_99,MOVER100,FTPOP,F0_4,F5_9,F10_14,F15_19,F20_24,F25_29,F30_34,F35_39,F40_44,F45_49,F50_54,F55_59,F60_64,F65_69,F70_74,F75_79,F80_84,F85_89,F90_94,F95_99,FOVER100"
-nullRecord= [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-dataColumns = [
-        'Geography',
-        'Total - Age',
-        '0 to 4 years',
-        '5 to 9 years',
-        '10 to 14 years',
-        '15 to 19 years',
-        '20 to 24 years',
-        '25 to 29 years',
-        '30 to 34 years',
-        '35 to 39 years',
-        '40 to 44 years',
-        '45 to 49 years',
-        '50 to 54 years',
-        '55 to 59 years',
-        '60 to 64 years',
-        '65 to 69 years',
-        '70 to 74 years',
-        '75 to 79 years',
-        '80 to 84 years',
-        '85 to 89 years',
-        '90 to 94 years',
-        '95 to 99 years',
-        '100 years and over' ]
+        {'name':'Dissemination area', 'code':'DA', 'codeLength':8}
+    ]
+# nullRecord= [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+dataDictionary = [
+        ["UID",""],
+        ["GEOGRAPHY","Geography"],
+        ["TMOTHTONG","Total - Detailed mother tongue"],
+        ["M_SNGLERES","Single responses"],
+        ["M_ENGLISH","English"],
+        ["M_FRENCH","French"],
+        ["M_NONOFFI","Non-official languages"],
+        ["M_ALGONQUI","Algonquin"],
+        ["M_ATIKAMEK","Atikamekw"],
+        ["M_BLACKFOO","Blackfoot"],
+        ["M_CARRIER","Carrier"],
+        ["M_CHILCOTI","Chilcotin"],
+        ["M_CREE","Cree languages"],
+        ["M_SIOUAN","Siouan languages"],
+        ["M_DENE","Dene"],
+        ["M_DOGRIB","Tlicho (Dogrib)"],
+        ["M_GITKSAN","Gitksan"],
+        ["M_INUINNAQ","Inuinnaqtun"],
+        ["M_INUKTITU","Inuktitut"],
+        ["M_KUTCHIN","Gwich'in"],
+        ["M_MALECITE","Malecite"],
+        ["M_MIKMAQ","Mi'kmaq"],
+        ["M_MOHAWK","Mohawk"],
+        ["M_MONTAGNA","Innu/Montagnais"],
+        ["M_NISGAA","Nisga'a"],
+        ["M_NSLAVE","North Slavey (Hare)"],
+        ["M_OJIBWAY","Ojibway"],
+        ["M_OJICREE","Oji-Cree"],
+        ["M_SHUSWAP","Shuswap (Secwepemctsin)"],
+        ["M_SSLAVE","South Slavey"],
+        ["M_TLINGIT","Tlingit"],
+        ["M_ITALIAN","Italian"],
+        ["M_PORTUGUE","Portuguese"],
+        ["M_ROMANIAN","Romanian"],
+        ["M_SPANISH","Spanish"],
+        ["M_DANISH","Danish"],
+        ["M_DUTCH","Dutch"],
+        ["M_FLEMISH","Flemish"],
+        ["M_FRISIAN","Frisian"],
+        ["M_GERMAN","German"],
+        ["M_NORWEGIA","Norwegian"],
+        ["M_SWEDISH","Swedish"],
+        ["M_YIDDISH","Yiddish"],
+        ["M_BOSNIAN","Bosnian"],
+        ["M_BULGARIA","Bulgarian"],
+        ["M_CROATIAN","Croatian"],
+        ["M_CZECH","Czech"],
+        ["M_MACEDONI","Macedonian"],
+        ["M_POLISH","Polish"],
+        ["M_RUSSIAN","Russian"],
+        ["M_SERBIAN","Serbian"],
+        ["M_SERBCROA","Serbo-Croatian"],
+        ["M_SLOVAK","Slovak"],
+        ["M_SLOVENIA","Slovenian"],
+        ["M_UKRAINIA","Ukrainian"],
+        ["M_LATVIAN","Latvian"],
+        ["M_LITHUANI","Lithuanian"],
+        ["M_ESTONIAN","Estonian"],
+        ["M_FINNISH","Finnish"],
+        ["M_HUNGARIA","Hungarian"],
+        ["M_GREEK","Greek"],
+        ["M_ARMENIAN","Armenian"],
+        ["M_TURKISH","Turkish"],
+        ["M_AMHARIC","Amharic"],
+        ["M_ARABIC","Arabic"],
+        ["M_HEBREW","Hebrew"],
+        ["M_MALTESE","Maltese"],
+        ["M_SOMALI","Somali"],
+        ["M_TIGRIGNA","Tigrigna"],
+        ["M_BENGALI","Bengali"],
+        ["M_GUJARATI","Gujarati"],
+        ["M_HINDI","Hindi"],
+        ["M_KURDISH","Kurdish"],
+        ["M_PANJABI","Panjabi (Punjabi)"],
+        ["M_PASHTO","Pashto"],
+        ["M_PERSIAN","Persian (Farsi)"],
+        ["M_SINDHI","Sindhi"],
+        ["M_SINHALA","Sinhala (Sinhalese)"],
+        ["M_URDU","Urdu"],
+        ["M_MALAYALA","Malayalam"],
+        ["M_TAMIL","Tamil"],
+        ["M_TELUGU","Telugu"],
+        ["M_JAPANESE","Japanese"],
+        ["M_KOREAN","Korean"],
+        ["M_CANTONES","Cantonese"],
+        ["M_CHINESE","Chinese, n.o.s."],
+        ["M_MANDARIN","Mandarin"],
+        ["M_TAIWANES","Taiwanese"],
+        ["M_LAO","Lao"],
+        ["M_KHMER","Khmer (Cambodian)"],
+        ["M_VIETNAME","Vietnamese"],
+        ["M_BISAYAN","Bisayan languages"],
+        ["M_ILOCANO","Ilocano"],
+        ["M_MALAY","Malay"],
+        ["M_TAGALOG","Tagalog (Pilipino, Filipino)"],
+        ["M_AKAN","Akan (Twi)"],
+        ["M_SWAHILI","Swahili"],
+        ["M_CREOLES","Creoles"],
+        ["M_OTHER","Other languages"],
+        ["M_MULTIPLE","Multiple responses"],
+        ["M_ENGFRE","English and French"],
+        ["M_ENGNONO","English and non-official language"],
+        ["M_FRENONO","French and non-official language"],
+        ["M_ENGFRENO","English, French and non-official language"]
+    ]
+columnHeaders= [d[0] for d in dataDictionary] #field names in destination file
+dataColumns = [d[1] for d in dataDictionary[1:] ] #field names in origin file
 
 
 def createOutputFiles( stub ):
@@ -61,7 +145,7 @@ def createOutputFiles( stub ):
 
 def writeHeader( fileList ):
     for f in fileList:
-        f.write( columnHeaders +'\n' )
+        f.write( ','.join( columnHeaders ) +'\n' )
 
 
 def formatData( d ):
@@ -77,18 +161,10 @@ def formatData( d ):
 
 def checkData( d ):
     try:
-        total = int( float(d[1]))
-        s = sum( [int(float(i)) for i in d[2:]] )
-    except:
-        print ">>intfloatERROR: "
-        print d
+        float( d[1] )
+        return True
+    except ValueError:
         return False
-    else:
-        if abs(total - s) < 50:
-            return True
-        else:
-            print ">>difference: " + str( abs(total-s))
-            return False
 
 
 def getDictionaryFromCSV( inputFile ):
@@ -107,8 +183,8 @@ def getDictionaryFromCSV( inputFile ):
     return csvDictionary
 
 
-def outputRecord( id, name, rA, rB, outputFiles):
-    combinedRecord = [id, name, int( float(rA[0]) + float(rB[0]) )] + rA + rB 
+def outputRecord( id, name, rA, outputFiles):
+    combinedRecord = [id, name ] + rA 
     for i in range(0, len(geoLevels)):
         if id < 10 ** geoLevels[i]['codeLength']:
             outputFiles[i].write( ','.join( [str(f) for f in combinedRecord] ) + '\n')
@@ -117,17 +193,10 @@ def outputRecord( id, name, rA, rB, outputFiles):
 
 def processCensus( inputFiles, outputFiles ):
     #process input files as CSVs
-    csvA,csvB = [getDictionaryFromCSV( file ) for file in inputFiles]
+    csvA = getDictionaryFromCSV( inputFiles[0] )
 
-    for id in sorted( set(csvA.keys() + csvB.keys())):
-        if (id in csvA.keys()) & (id in csvB.keys()):
-            outputRecord( id, csvA[id][0], csvA[id][1:], csvB[id][1:], outputFiles ) 
-        elif (id in csvA.keys()):
-            print ">>processCensus: missing B:" + str(id)
-            outputRecord( id, csvA[id][0], csvA[id][1:], nullRecord, outputFiles ) 
-        else:  # id in csvB.keys()
-            print ">>processCensus: missing A:" + str(id)
-            outputRecord( id, csvB[id][0], nullRecord, csvB[id][1:], outputFiles ) 
+    for id in csvA.keys():
+        outputRecord( id, csvA[id][0], csvA[id][1:], outputFiles ) 
 
 
 def closeFiles( fileList ):
@@ -137,32 +206,31 @@ def closeFiles( fileList ):
 
 
 def getCommandLine():
-    if (len(sys.argv) ==4):
-        if os.path.isfile( sys.argv[1] ) & os.path.isfile( sys.argv[2] ):
-            return sys.argv[1],sys.argv[2],sys.argv[3]
-    return "","",""
+    if (len(sys.argv) ==3):
+        if os.path.isfile( sys.argv[1] ) :
+            return sys.argv[1],sys.argv[2]
+    return "",""
 
 
 def printUsage():
     print "Usage:"
-    print "python " + sys.argv[0] + " <INPUT_MALE.csv> <INPUT_FEMALE.csv> <OUTPUTSTUB>\n"
+    print "python " + sys.argv[0] + " <LANGUAGE.csv> <OUTPUTSTUB>\n"
 
 
 if __name__ == "__main__":
-    print "Format Census 2011"
+    print "Format Census 2011: Language module"
 
-    inputFileNameA,inputFileNameB,outputStub = getCommandLine()
-    if (not inputFileNameA) & (not inputFileNameB):
+    inputFileNameA,outputStub = getCommandLine()
+    if (not inputFileNameA) :
         printUsage()
         sys.exit(1)
 
     else:
-        print "Reading: %s, %s" % (inputFileNameA, inputFileNameB)
+        print "Reading: %s" % (inputFileNameA)
         print "Exporting: %s" % outputStub
 
         inputFiles = []
         inputFiles.append( open( inputFileNameA ))
-        inputFiles.append( open( inputFileNameB ))
         outputFiles = createOutputFiles( outputStub )
 
         writeHeader( outputFiles )
