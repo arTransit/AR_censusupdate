@@ -82,18 +82,19 @@ def formatData( d ):
     row = [d[i] for i in dataColumns]
     searchId = re.search(r"\((\d+)\)", d['Geography'])
     if searchId:
-        if int(searchId.groups()[0][0:2]) == provinceCodes['BC']:
-            if checkData( row ):
-                rowId = int( searchId.groups()[0] ) 
+        _rowId = int(searchId.groups()[0])
+        if checkData( _rowId, row ): rowId = _rowId
     return rowId,row
 
 
-def checkData( d ):
-    try:
-        float( d[1] )
-        return True
-    except ValueError:
-        return False
+def checkData( id, d ):
+    if (900 < id < 980) or (id == provinceCodes['BC']):
+        try:
+            float( d[1] )  # are numbers valid?
+            return True
+        except ValueError:
+            return False
+    return False
 
 
 def getDictionaryFromCSV( inputFile ):
