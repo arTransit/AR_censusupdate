@@ -35,7 +35,6 @@ dataDictionary = [
         ["PARTICRATE","Participation rate"],
         ["EMPRATE","Employment rate"],
         ["UNEMPRATE","Unemployment rate"],
-        ["TEMPPLACE","Geography"],
         ["TEMPBYMODE","Total - Mode of transportation"],
         ["DRIVER","Car, truck or van as a driver"],
         ["PASSENGER","Car, truck or van as a passenger"],
